@@ -36,6 +36,7 @@ class section extends section_base {
      * @return array data context for a mustache template
      */
     public function export_for_template(\renderer_base $output): stdClass {
+        global $USER;
         $format = $this->format;
         $course = $format->get_course();
         $section = $this->section;
@@ -47,13 +48,20 @@ class section extends section_base {
         $indexcollapsed = false;
         $contentcollapsed = false;
         $preferences = $format->get_sections_preferences();
-        if (isset($preferences[$section->id])) {
-            $sectionpreferences = $preferences[$section->id];
-            if (!empty($sectionpreferences->contentcollapsed)) {
+        $visits = section_options::check_assessmenttab_viewed($USER->id, $course->id);
+        if ($visits <= 1) {
+            if ($formatoptions['initialcollapsestate'] != 'initialcollapsestate_expand') {
                 $contentcollapsed = true;
             }
-            if (!empty($sectionpreferences->indexcollapsed)) {
-                $indexcollapsed = true;
+        } else {
+            if (isset($preferences[$section->id])) {
+                $sectionpreferences = $preferences[$section->id];
+                if (!empty($sectionpreferences->contentcollapsed)) {
+                    $contentcollapsed = true;
+                }
+                if (!empty($sectionpreferences->indexcollapsed)) {
+                    $indexcollapsed = true;
+                }
             }
         }
 

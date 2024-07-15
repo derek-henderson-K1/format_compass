@@ -346,10 +346,12 @@ class section_options extends \format_compass\local\options {
      * @return string $renderer either allononepage or multiplepages.
      */
     public static function get_assessments_renderer($format) {
+        global $USER, $COURSE, $DB;
         $options = $format->get_format_options();
         $assessmenttablayout = $options['assessmentstablayout'];
         if ($assessmenttablayout == 'assessmentslayout_allonepage') {
             $renderer = 'format_compass\output\courseformat\content\assessmentsallonepage';
+            section_options::record_assessmenttab_viewed($USER->id, $COURSE->id);
         } else {
             $renderer = 'format_compass\output\courseformat\content\assessmentsoneperpage';
         }
@@ -384,5 +386,73 @@ class section_options extends \format_compass\local\options {
         }
         return $iscollapsed;
     }
-}
 
+    /**
+     * Check to see if the assessmenttab has been viewed.
+     *
+     * @param int $userid the id of the current user
+     * @param int $courseid the if of the current course
+     * @return int $firstvisitrecord->recordcount - Number of times the assessments page has been visited.
+     */
+    public static function check_assessmenttab_viewed(int $userid, int $courseid) : int {
+        global $DB;
+
+        // See if the record is in the log store;
+        // Check to see if this is the first visit on this tab in the course..
+        // The logstore will be blank if this is the first time the user this tab in this course..
+        // Otherwise it will have a record.
+        $params = [
+            'userid' => $userid,
+            'courseid' => $courseid,
+        ];
+        $selectvisit = 'SELECT COUNT(1) AS recordcount
+                            FROM {logstore_standard_log}
+                            WHERE eventname LIKE "%course_viewed%"
+                            AND userid = :userid
+                            AND courseid = :courseid
+                            AND JSON_EXTRACT(other, "$.tab") = "assessments" ';
+        $firstvisitrecord = $DB->get_record_sql($selectvisit, $params);
+
+        return $firstvisitrecord->recordcount;
+    }
+
+    /**
+     * Record the assessmenttab has been viewed.
+     *
+     * @param int $userid the id of the current user
+     * @param int $courseid the if of the current course
+     */
+    public static function record_assessmenttab_viewed(int $userid, int $courseid) {
+        global $DB;
+        $format = course_get_format($courseid);
+        $options = $format->get_format_options();
+        $visits = self::check_assessmenttab_viewed($userid, $courseid);
+
+        // Set preferences.
+        if ($visits == 0) {
+            if ($options['initialcollapsestate'] == 'initialcollapsestate_expand') {
+                $format->set_sections_preference('contentcollapsed', []);
+            } else {
+                // Set section preferences for the user for all assessment sections.
+                $recordselect = 'course = '.$courseid;
+                $assesmentsections = $DB->get_records_select('course_sections', $recordselect, []);
+                $sectionlist = [];
+                foreach ($assesmentsections as $section) {
+                   $sectionlist[] = (int)($section->id);
+                }
+                $format->set_sections_preference('contentcollapsed', $sectionlist);
+            }
+        }
+
+        // Record a maximum of 2 logs.
+        // This is because the record is being saved before the checks.
+        if ($visits <= 1) {
+            $context = \context_course::instance($courseid);
+            $eventdata = array('context' => $context);
+            $eventdata['other']['tab'] = 'assessments';
+            $event = \core\event\course_viewed::create($eventdata);
+            $event->trigger();
+        }
+    }
+
+}

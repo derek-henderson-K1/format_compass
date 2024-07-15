@@ -43,7 +43,7 @@ class assessmentsallonepage extends section_base {
     protected $format;
 
     public function export_for_template(\renderer_base $output): stdClass {
-        global $PAGE;
+        global $USER, $COURSE;
         $format = $this->format;
 
         $data = parent::export_for_template($output);
@@ -67,7 +67,7 @@ class assessmentsallonepage extends section_base {
             foreach ($sectionslist as $forsection) {
                 // Display chart if user visible or if format hidden section setting shows unavailable sections.
                 if ($forsection->uservisible == true || $options['hiddensections'] == 0) {
-                    $so = section_options::get_section_options($PAGE->course->id, $forsection->id);
+                    $so = section_options::get_section_options($COURSE->id, $forsection->id);
                     $chartpercent = '';
                     $chartpercentbreakdown = '';
 
@@ -162,6 +162,21 @@ class assessmentsallonepage extends section_base {
             $data->insertafter = true;
             $data->contentcollapsed = false;
             $preferences = $format->get_sections_preferences();
+            $visits = section_options::check_assessmenttab_viewed($USER->id, $COURSE->id);
+
+            // The log event is triggered but the record has not yet been saved in the DB.
+            if ($visits == 0) {
+                if ($options['initialcollapsestate'] != 'initialcollapsestate_expand') {
+                    $data->contentcollapsed = true;
+                }
+            } else {
+                if (isset($preferences[$section->id])) {
+                    $sectionpreferences = $preferences[$section->id];
+                    if (!empty($sectionpreferences->contentcollapsed)) {
+                        $data->contentcollapsed = true;
+                    }
+                }
+            }
             $data->contentcollapsed = section_options::get_collapsed_state($section, $preferences);
             if ($data->contentcollapsed) {
                 $data->seemore = get_string('assessments_seemore', 'format_compass');
@@ -193,5 +208,50 @@ class assessmentsallonepage extends section_base {
      */
     public function get_section_num() {
         return $this->section->section;
+    }
+
+     /**
+     * Check to see if the assessmenttab has been viewed.
+     *
+     * @param int $userid the id of the current user
+     * @param int $courseid  the id of the current course
+     * @return int assessmenttab  return 1 if its first time on the tab, otherwise 2.
+     */
+    public static function check_assessmenttab_viewed(int $userid, int $courseid) : int {
+        global $DB;
+        static $assessmenttab = 0;
+        if ($assessmenttab > 0) {
+            return $assessmenttab;
+        }
+        if ($assessmenttab == 0 ) {
+            // See if the record is in the log store;
+            // Check to see if this is the first visit on this tab in the course..
+            // The logstore will be blank if this is the first time the user this tab in this course..
+            // Otherwise it will have a record.
+            $params = [
+                'userid' => $userid,
+                'courseid' => $courseid,
+            ];
+            $selectvisit = 'SELECT *
+                              FROM {logstore_standard_log}
+                              WHERE eventname LIKE "%course_viewed%"
+                                AND userid = :userid
+                                AND courseid = :courseid
+                                AND JSON_EXTRACT(other, "$.tab") = "assessments" ';
+            $firstvisitrecord = $DB->record_exists_sql($selectvisit, $params);
+            if ($firstvisitrecord) {
+                // This means we the user has been on the tab once before.
+                $assessmenttab = 2;
+            } else {
+                // Add it to the log store so we don't use the settings again.
+                $context = \context_course::instance($courseid);
+                $eventdata = array('context' => $context);
+                $eventdata['other']['tab'] = 'assessments';
+                $event = \core\event\course_viewed::create($eventdata);
+                $event->trigger();
+                $assessmenttab = 1;
+            }
+        }
+        return $assessmenttab;
     }
 }
