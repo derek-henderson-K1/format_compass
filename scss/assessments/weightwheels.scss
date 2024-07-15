@@ -1,0 +1,75 @@
+.#{$prefix}-weightwheel-container {
+    position:absolute;
+    top:0;
+    right:0;
+    width:100px;
+    height:100px;
+}
+
+.#{$prefix}-weightwheel-countsfor {
+    font-size:0.8em;
+    position:absolute;
+    width:100%;
+    text-align:center;
+    margin:6px 0 0 0;
+}
+
+.#{$prefix}-weightwheel-wrapper {
+    position:relative;
+    margin-top:20px;
+}
+
+.#{$prefix}-weightwheel-value {
+    position: absolute;
+    width: 100%;
+    top: 15px;
+    height: 80px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.#{$prefix}-weightwheel-percent {
+    display:block;
+    font-size:1.4em;
+    line-height:20px;
+}
+
+.#{$prefix}-weightwheel-percent-breakdown {
+    display:block;
+    font-size: 0.65em;
+}
+
+
+
+
+
+
+.#{$prefix}-weightwheel-percent-breakdown-edit {
+    display:block;
+    font-size: 0.65em;
+}
+
+.#{$prefix}-weightwheel-wrapper:hover .#{$prefix}-weightwheel-percent-edit {
+    display:none;
+}
+
+.#{$prefix}-weightwheel-wrapper:hover .#{$prefix}-weightwheel-percent-breakdown-edit {
+    display:none;
+}
+
+.#{$prefix}-weightwheel-wrapper .#{$prefix}-weightwheel-edit {
+    display:none !important;
+}
+
+.#{$prefix}-weightwheel-wrapper:hover .#{$prefix}-weightwheel-edit {
+    display:block !important;
+}
+
+.#{$prefix}-weightwheel-percent-edit {
+    display:block;
+    font-size:1.4em;
+    line-height:20px;
+}

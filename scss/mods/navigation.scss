@@ -1,0 +1,24 @@
+.format-#{$prefix}  {
+    .moremenu .nav-link {
+        height:59px;
+
+        &.active, &.active:hover {
+            position:relative;
+            font-weight:bold;
+            border-bottom-color:transparent;
+
+            &::after {
+                content: ' ';
+                position:absolute;
+                left:0;
+                bottom:-8px;
+                display:block;
+                height:10px;
+                width:100%;
+                background-color:var(--active_tab_highlight_colour);
+                border-radius:4px;
+                margin-left:0;
+            }
+        }
+    }
+}

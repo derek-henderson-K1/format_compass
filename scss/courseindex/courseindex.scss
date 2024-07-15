@@ -1,0 +1,58 @@
+.#{$prefix}-courseindex-label-lesson{
+    font-weight:700;
+    color:#495057;
+    text-transform:uppercase;
+    margin:5px 0;
+    border-top: 1px solid lightgray;
+    padding-top: 15px;
+}
+
+.#{$prefix}-courseindex-label-assessment{
+    font-weight:700;
+    color:#495057;
+    text-transform:uppercase;
+    margin:5px 0;
+    border-top: 1px solid lightgray;
+    padding-top: 15px;
+}
+
+#courseindex-lessons-container{
+    margin-left: -15px;
+}
+
+#courseindex-assessments-container{
+    margin-left: -15px;
+}
+
+#courseindex-home-container .courseindex-item {
+    padding-left: 0px !important;
+}
+
+.not-divider .completioninfo.completion_complete{
+    padding-left:20px !important;
+}
+
+.not-divider .completioninfo.completion_incomplete{
+    padding-left:20px !important;
+}
+
+.not-divider .completioninfo.completion_none {
+    padding-left:42px !important;
+}
+
+.not-divider a {
+    flex: 1;
+}
+
+.courseindex .courseindex-item .completioninfo.completion_complete {
+    color: #077b7b !important;
+}
+
+.courseindex-item.sectiondivider .courseindex-name {
+    padding-left: 20px;
+}
+
+#courseindex-home-container .courseindex-section-title {
+    text-transform: uppercase;
+    margin-left:-6px;
+}

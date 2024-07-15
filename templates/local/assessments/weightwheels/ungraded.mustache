@@ -1,0 +1,44 @@
+{{!
+    This file is part of Moodle - http://moodle.org/
+
+    Moodle is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    Moodle is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+}}
+{{!
+    @template format_compass/templates/local/assessments/weightwheels/ungraded.mustache
+
+    Displays ungraded weightwheel
+}}
+
+<div class="compass-ungraded-container">
+    <div class="compass-ungraded">{{#str}}assessments_ungraded, format_compass{{/str}}</div>
+    <div class="compass-ungraded-wrapper">
+        <div class="compass-ungraded-icons{{#editing}}-edit{{/editing}}">
+            <svg xmlns="
+            http://www.w3.org/2000/svg"
+            width="32.775" height="16.313" viewBox="0 0 32.775 16.313">
+                <g id="Groupe_393" data-name="Groupe 393" transform="translate(-17.285 -27.488)">
+                <path id="Icon_awesome-align-left" data-name="Icon awesome-align-left" d="M.458,13.681H9.829a.458.458,0,0,0,.458-.458v-1.37a.458.458,0,0,0-.458-.458H.458A.458.458,0,0,0,0,11.853v1.37a.458.458,0,0,0,.458.458Zm0-9.145H9.829a.458.458,0,0,0,.458-.458V2.708a.458.458,0,0,0-.458-.458H.458A.458.458,0,0,0,0,2.708v1.37a.458.458,0,0,0,.458.458ZM15.432,6.822H.572A.572.572,0,0,0,0,7.394V8.537a.572.572,0,0,0,.572.572h14.86A.572.572,0,0,0,16,8.537V7.394A.572.572,0,0,0,15.432,6.822Zm0,9.145H.572A.572.572,0,0,0,0,16.538v1.143a.572.572,0,0,0,.572.572h14.86A.572.572,0,0,0,16,17.682V16.538A.572.572,0,0,0,15.432,15.967Z" transform="translate(17.285 25.355)"/>
+                <path id="Icon_open-info" data-name="Icon open-info" d="M6.117,0A2.039,2.039,0,1,0,8.156,2.039,2.045,2.045,0,0,0,6.117,0ZM3.059,5.1A3.054,3.054,0,0,0,0,8.156H2.039a1.02,1.02,0,0,1,2.039,0c0,.571-2.039,3.344-2.039,5.1A3.016,3.016,0,0,0,5.1,16.313a3.054,3.054,0,0,0,3.059-3.059H6.117a1.02,1.02,0,0,1-2.039,0c0-.734,2.039-3.752,2.039-5.1A3.081,3.081,0,0,0,3.059,5.1Z" transform="translate(41.904 27.488)"/>
+                </g>
+            </svg>
+        </div>
+        {{#editing}}
+            <div class="compass-ungraded-edit">
+                <a href="#" data-action="editGradeWeight" data-id="{{id}}" class="quickediticon visibleifjs">
+                    <i class="icon fa fa-pencil fa-fw " title="Edit section name" role="img" aria-label="Edit section name"></i>
+                </a>
+            </div>
+        {{/editing}}
+    </div>
+</div>

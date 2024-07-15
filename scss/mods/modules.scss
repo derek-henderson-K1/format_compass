@@ -1,0 +1,91 @@
+.format-#{$prefix} {
+
+    .section { position:relative; }
+
+    .course-section {
+        padding:10px 0;
+    }
+
+    .section .activity-item {
+        border: none;
+        padding:4px;
+    }
+
+    .section .activity:not(:first-child) {
+        border-top: 2px solid #f8f9fa;
+    }
+
+    .activity-information {
+        margin-top:6px;
+    }
+
+    .description .course-description-item {
+        padding-left:0.5em;
+        padding-right:0.5em;
+        padding-top:0.5em;
+        padding-bottom:0;
+    }
+
+    .description .course-description-item:first-child {
+        padding-top:0.5em;
+        margin-top:0.5em;
+    }
+
+    .description .course-description-item:last-child {
+        padding-bottom:0.5em;
+        margin-bottom:0.5em;
+
+        .description-inner {
+            padding-top:0;
+        }
+    }
+
+    .activityiconcontainer.courseicon {
+        margin-right:0.6em !important;
+    }
+
+    .activityiconcontainer {
+        background-color:var(--activity_icon_container_colour) !important;
+        .activityicon {
+            filter: var(--activity_icon_colour) !important;
+        }
+    }
+
+    .activityname {
+        line-height:1.4;
+    }
+
+    .activityiconcontainer {
+        width:42px;
+        height:42px;
+    }
+
+    .automatic-completion-conditions .badge.badge-light.badge-pill {
+        background-color:var(--completion_todo_bg_colour) !important;
+    }
+
+    .course-description-item.summarytext .description-inner .no-overflow {
+        :last-child {
+            margin-bottom:0;
+        }
+    }
+
+    .activitytitle { position:relative; }
+
+    .#{$prefix}-activity {
+        width: 100%;
+    }
+}
+
+.editing {
+    .#{$prefix} {
+        .section .activity {
+            border-top:none;
+        }
+        .section .activity-item {
+            border: 1px solid #dcdcdc;
+            padding:1.5rem;
+        }
+    }
+}
+

@@ -1,0 +1,140 @@
+.#{$prefix}-home.activitylistlayout_simplebuttons_2columns,
+.#{$prefix}-home.activitylistlayout_simplebuttons_3columns {
+    .#{$prefix}-lessons-section-box {
+        .section {
+            position:relative;
+            .#{$prefix}-activity {
+                width:100%;
+            }
+            .activity-info {
+                display:none !important;
+            }
+
+            .#{$prefix}-unread-indicator {
+                height:21px;
+                min-width:21px;
+                line-height:17px;
+                padding:0;
+                font-size:10px;
+                text-align:center;
+                border-radius:10px;
+                color:var(--unread_notification_text_colour);
+                background:var(--unread_notification_bg_colour);
+                position:absolute;
+                left: 36px;
+                top: -4px;
+                border:2px solid #ffffff;
+            }
+        }
+    }
+}
+
+@include media-breakpoint-up(sm) {
+    body:not(.editing) .#{$prefix}-home.activitylistlayout_simplebuttons_2columns,
+    body:not(.editing) .#{$prefix}-home.activitylistlayout_simplebuttons_3columns {
+        .#{$prefix}-lessons-section-box {
+            .section {
+                display:grid !important;
+                grid-template-columns: repeat(auto-fill, calc(50% - 15px));
+                grid-gap: 15px;
+                justify-content: space-between;
+
+                .activity {
+                    border:1px solid #e5e9ec !important;
+                    border-radius:6px;
+                    padding:0;
+
+                    .activitytitle { position:static; }
+
+                    .activity-item {
+                        height:100%;
+                        padding:9px;
+
+                        &:hover {
+                            background-color:#f8f9fa;
+                        }
+
+                        .courseicon {
+                            margin-right:9px !important;
+                        }
+
+                        .#{$prefix}-availability-restricted {
+                            display:none !important;
+                        }
+
+                        .availabilityinfo {
+                            padding-left:5px;
+                            .icon {
+                                margin-right:0;
+                            }
+                        }
+                    }
+
+                    .activityiconcontainer {
+                        width:30px;
+                        height:42px;
+                        background-color:transparent !important;
+
+                        .activityicon {
+                            filter: none !important;
+                        }
+                    }
+
+                    .description .activity-altcontent {
+                        display:none !important;
+                    }
+
+                    &.modtype_sectiondivider, &.modtype_label {
+                        border:0 !important;
+                        grid-column: 1 / -1;
+                        margin:0;
+
+                        h4 {
+                            margin-bottom:0;
+                        }
+
+                        .description {
+                            position:static;
+
+                            .activity-altcontent { display:block !important; }
+                         }
+                    }
+                }
+
+                .#{$prefix}-unread-indicator {
+                    position:absolute;
+                    left:27px;
+                    top:7px;
+                }
+
+                .activity-dates {
+                    display:none;
+                }
+            }
+        }
+    }
+}
+
+@include media-breakpoint-up(md) {
+    body:not(.editing) .#{$prefix}-home.activitylistlayout_simplebuttons_2columns {
+        .#{$prefix}-lessons-section-box {
+            .section {
+                display:grid !important;
+                grid-template-columns: repeat(auto-fill, calc(50% - 15px));
+                grid-gap: 15px;
+                justify-content: space-between;
+            }
+        }
+    }
+
+    body:not(.editing) .#{$prefix}-home.activitylistlayout_simplebuttons_3columns {
+        .#{$prefix}-lessons-section-box {
+            .section {
+                display:grid !important;
+                grid-template-columns: repeat(auto-fill, calc(33.3% - 15px));
+                grid-gap: 15px;
+                justify-content: space-between;
+            }
+        }
+    }
+}

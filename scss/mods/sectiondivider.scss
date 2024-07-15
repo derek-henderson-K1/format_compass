@@ -1,0 +1,39 @@
+body .#{$prefix} .modtype_sectiondivider {
+    border-top: 2px solid #f8f9fa;
+    &:first-child { border-top:none; }
+    .activity-item {
+        display:flex;
+        flex-direction: row-reverse;
+        border:0;
+        padding:4px 4px 4px 4px;
+    }
+
+    h4 {
+        font-size:1.06rem;
+        margin-bottom:0;
+    }
+
+    .description {
+        width:100%;
+        align-self:center;
+    }
+
+    .text_to_html {
+        margin-top:0.5rem;
+
+        p:last-child {
+            margin-bottom:0;
+        }
+    }
+}
+
+body.editing .#{$prefix} .modtype_sectiondivider {
+    .activity-item {
+        border: 1px solid #dcdcdc;
+        padding:1.5em;
+
+        .contentwithoutlink {
+            padding-right: 12px;
+        }
+    }
+}

@@ -1,0 +1,53 @@
+{{!
+    This file is part of Moodle - http://moodle.org/
+
+    Moodle is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    Moodle is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+}}
+{{!
+    @template format_compass/local/content/section/cmsummary
+
+    Displays the activities summary of a section.
+
+    Example context (json):
+    {
+        "showcompletion": true,
+        "mods": [
+            {
+                "name": "Forums",
+                "count": "3"
+            },
+            {
+                "name": "Books",
+                "count": "2"
+            }
+        ],
+        "modprogress": "Total 5"
+    }
+}}
+{{#showcompletion}}
+    <div class="compass-lessons-summary-container section-summary-activities">
+        <span class="compass-lessons-progress-summary activity-count">{{modprogress}}</span>
+        {{#showmods}}
+            <div class="compass-lessons-mods-summary">
+                {{#mods}}
+                    <span class="activity-count">{{name}}: {{count}}</span>
+                {{/mods}}
+            </div>
+        {{/showmods}}
+    </div>
+    <div class="compass-progressbar-container">
+        <div class="compass-progressbar" style="width: calc({{complete}} / {{total}} * 100%)"></div>
+    </div>
+{{/showcompletion}}
+

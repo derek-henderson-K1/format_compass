@@ -1,0 +1,204 @@
+.#{$prefix}-lessons {
+    position:relative;
+    z-index:2;
+    list-style:none;
+    margin:0;
+    padding:0;
+
+    .#{$prefix}-lessons-section {
+
+        &-container {
+            border-right:none;
+            border-left:none;
+            min-height:140px;
+            padding-right:0px;
+            padding-left:0px;
+            margin-bottom:8px;
+            margin-top:0px;
+            display:flex;
+            border:0;
+            border-radius:11px;
+            box-shadow: 5px 0px 0px 8px rgba(255,255,255,1);
+        }
+
+        &.course-section {
+            padding:0;
+            margin:0;
+            border:0;
+        }
+
+        .#{$prefix}-lessons-progress-summary.activity-count {
+            color:#000000 !important;
+            display:flex !important;
+            align-items:flex-end;
+            padding-right:20px;
+        }
+
+        .activity-count {
+            margin:2px 2px 0 2px !important;
+        }
+
+        .#{$prefix}-lessons-mods-summary {
+            display:flex;
+            justify-content:flex-end;
+            flex-wrap:wrap;
+        }
+    }
+
+    .#{$prefix}-lessons-section-box {
+        position:relative;
+        flex-shrink: 0;
+        display:flex;
+        flex-direction:column;
+        justify-content: space-between;
+        border:1px solid #e5e8eb;
+        border-radius:11px;
+        padding:6px 15px 10px 15px;
+        width:100%;
+        min-height:140px;
+
+        @include media-breakpoint-up(sm) {
+            width:calc(100% - 23%);
+            max-width:calc(100% - 140px);
+            border-radius:11px 0 0 11px;
+            border-right:none;
+        }
+
+        @include media-breakpoint-up(md) {
+            width:calc(100% - 32%);
+            border-radius:11px 0 0 11px;
+            border-right:none;
+        }
+
+        @include media-breakpoint-up(lg) {
+            width:calc(100% - 250px);
+            border-radius:11px 0 0 11px;
+            border-right:none;
+        }
+        .section_action_menu {
+            position:absolute;
+            top:0;
+            right:0;
+        }
+        .#{$prefix}-section-header {
+            font-size:1rem;
+
+            .#{$prefix}-section-title-container {
+                padding-right:0px;
+                position:relative;
+                display:flex;
+                flex-wrap:nowrap;
+            }
+
+            .#{$prefix}-section-title {
+                font-size:20px;
+                margin-right:10px;
+                line-height:30px;
+                font-weight:normal;
+                display:inline-block;
+
+                &.#{$prefix}-header-offset {
+                    margin-top:10px;
+                }
+
+                &.#{$prefix}-section-hassubname {
+                    font-size:.9375rem;
+                    line-height:22px;
+                    color:#000000;
+                    margin-right:10px;
+                }
+            }
+
+            .#{$prefix}-section-rename-btn, .add-to-sharing-cart {
+                display:inline-block;
+                width:16px;
+                height:16px;
+                position:relative;
+                top:-1px;
+            }
+            .add-to-sharing-cart { margin-left:5px; }
+            .icon.fa-pencil, .icon.fa-shopping-basket {
+                margin-right:0;
+                margin-left:0;
+            }
+        }
+        // Hide CMlist ul in one per page lessons view
+        .section { display:none; }
+    }
+
+    .changenumsections {
+        background:#ffffff;
+
+        ul {
+            display:none;
+        }
+    }
+
+    .#{$prefix}-lessons-summary-container {
+        display:flex;
+        justify-content: space-between;
+    }
+}
+
+.#{$prefix}-sections-container {
+    position:relative;
+}
+
+.#{$prefix}-window-image {
+    @include media-breakpoint-up(sm) {
+        background: var(--vertical_bg_image_path);
+        min-width:140px;
+        width:23%;
+        height:100%;
+        position:absolute;
+        right:0;
+        z-index:1;
+
+        .#{$prefix}-window-overlay {
+            position:absolute;
+            width:100%;
+            height:100%;
+            background-color:var(--vertical_bg_image_filter_colour);
+        }
+    }
+
+    @include media-breakpoint-up(md) {
+        width:32%;
+        min-width:140px;
+    }
+
+    @include media-breakpoint-up(lg) {
+        width:32%;
+        max-width:250px;
+    }
+}
+
+// Will need to have the logic for the color shading
+.#{$prefix}-progressbar-container {
+    width:100%;
+    height:5px;
+    background-color:var(--progress_bar_bg_colour);
+    border-radius:3px;
+}
+
+.#{$prefix}-progressbar {
+    height: 5px;
+    background-color:var(--progress_bar_fg_colour);
+    border-radius: 3px;
+}
+
+// Fix for the drawer toggler going under the white borders on mobile mode
+.format-#{$prefix} .drawer-toggles .drawer-toggler {
+    position:fixed;
+    z-index:3;
+}
+
+// Hide image overlay in edit mode.
+.editing .#{$prefix}-lessons .#{$prefix}-lessons-section.course-section {
+    margin-bottom:4px;
+}
+
+.#{$prefix}-lesson { padding-left:0; }
+.single-section .#{$prefix} {
+    padding-left:0;
+}

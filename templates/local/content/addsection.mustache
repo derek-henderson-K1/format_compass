@@ -1,0 +1,86 @@
+{{!
+    This file is part of Moodle - http://moodle.org/
+
+    Moodle is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    Moodle is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+}}
+{{!
+    @template format_compass/local/content/addsection
+
+    Displays the add section button inside a course.
+
+    Example context (json):
+    {
+        "showaddsection": true,
+        "id": 42,
+        "insertafter": true,
+        "num": 0,
+        "target": "lessons"
+        "increase": {
+            "url": "#"
+        },
+        "decrease": {
+            "url": "#"
+        },
+        "addsections": {
+            "url": "#",
+            "title": "Add section",
+            "newsection": 3
+        }
+    }
+}}
+{{#showaddsection}}
+    {{#emptysection}}
+        <div class="addsectionwhenempty">
+            <button
+                class="btn btn-link text-decoration-none activity-add d-flex align-items-center p-3 mb-3"
+                data-action="addSection"
+                data-target="{{target}}"
+                data-add-sections="{{title}}"
+                data-new-sections="{{newsection}}"
+                {{#insertafter}} data-id="{{id}}" {{/insertafter}} >
+                <span class="pluscontainer icon-no-margin icon-size-3 d-flex p-2 mr-3">
+                    {{#pix}} t/add, core {{/pix}}
+                </span>
+                <span class="activity-add-text">{{#str}}addsections, format_compass{{/str}}</span>
+            </button>
+        </div>
+    {{/emptysection}}
+    {{^emptysection}}
+        <div class="mdl-left py-2 changenumsections">
+            {{#increase}}
+            <a href="{{{url}}}" class="increase-sections">
+                {{#pix}}t/switch_plus, moodle, {{#str}} increasesections, moodle {{/str}}{{/pix}}
+            </a>
+            {{/increase}}
+            {{#decrease}}
+            <a href="{{{url}}}" class="reduce-sections">
+                {{#pix}}t/switch_minus, moodle, {{#str}} reducesections, moodle {{/str}}{{/pix}}
+            </a>
+            {{/decrease}}
+            {{#addsections}}
+            <a
+                href="{{{url}}}"
+                class="add-sections"
+                data-add-sections="{{title}}"
+                data-new-sections="{{newsection}}"
+                data-action="addSection"
+                data-target="{{target}}"
+                {{#insertafter}} data-id="{{id}}" {{/insertafter}}
+            >
+                {{title}}
+            </a>
+            {{/addsections}}
+        </div>
+    {{/emptysection}}
+{{/showaddsection}}

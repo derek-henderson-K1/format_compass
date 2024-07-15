@@ -1,0 +1,155 @@
+{{!
+    This file is part of Moodle - http://moodle.org/
+
+    Moodle is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    Moodle is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+}}
+{{!
+    @template format_compass/templates/local/content/section/content
+    Displays a course section header.
+
+    Example context (json):
+    {
+        "id": 123,
+        "name": "Section title",
+        "title": "<a href=\"http://moodle/course/view.php?id=5#section-0\">Section title</a>",
+        "url": "#",
+        "headerdisplaymultipage": true,
+        "editing": 0
+    }
+}}
+
+{{#headerdisplaymultipage}}
+    {{#singlesection}}
+        <h3 class="sectionname compass-section-header {{#hassubname}}compass-section-hassubname{{/hassubname}}">
+            <div>
+                <span class="compass-section-title">{{{title}}}</span>
+
+                {{#editing}}
+                    <a href="#" data-action="renameSection" data-id="{{id}}" class="quickediticon visibleifjs {{format}}-section-rename-btn">
+                        <i class="icon fa fa-pencil fa-fw " title="Edit section name" role="img" aria-label="Edit section name"></i>
+                    </a>
+                {{/editing}}
+            </div>
+
+            {{#hassubname}}
+                <div class="compass-section-subname-container">
+                    <span class="compass-section-title">{{{subname}}}</span>
+
+                    {{#editing}}
+                        <a href="#" data-action="renameSection" data-id="{{id}}" class="quickediticon visibleifjs compass-section-rename-btn">
+                            <i class="icon fa fa-pencil fa-fw " title="Edit section name" role="img" aria-label="Edit section name"></i>
+                        </a>
+                    {{/editing}}
+                </div>
+            {{/hassubname}}
+        </h3>
+    {{/singlesection}}
+    {{^singlesection}}
+        <h3 class="sectionname compass-section-header">
+            <a class="compass-section-title {{#hassubname}}compass-section-hassubname{{/hassubname}} {{^hassubname}}compass-header-offset{{/hassubname}}" href="{{{url}}}">
+                {{{title}}}
+            </a>
+            {{#editing}}
+                {{^initialsection}}
+                    <a href="#" data-action="renameSection" data-id="{{id}}" class="quickediticon visibleifjs compass-section-rename-btn">
+                        <i class="icon fa fa-pencil fa-fw " title="Edit section name" role="img" aria-label="Edit section name"></i>
+                    </a>
+                {{/initialsection}}
+            {{/editing}}
+
+            {{#hassubname}}
+                <div class="compass-section-subname-container">
+                    <div class="compass-section-title-container">
+                        <a class="compass-section-title" href="{{{url}}}">{{{subname}}}</a>
+                        {{#editing}}
+                            {{^initialsection}}
+                                <a href="#" data-action="renameSection" data-id="{{id}}" class="quickediticon visibleifjs compass-section-rename-btn">
+                                    <i class="icon fa fa-pencil fa-fw " title="Edit section name" role="img" aria-label="Edit section name"></i>
+                                </a>
+                            {{/initialsection}}
+                        {{/editing}}
+                    </div>
+                </div>
+            {{/hassubname}}
+        </h3>
+    {{/singlesection}}
+{{/headerdisplaymultipage}}
+{{^headerdisplaymultipage}}
+    {{#sitehome}}
+        <h2 id="sectionid-{{id}}-title" class="sectionname">
+            {{{title}}}
+        </h2>
+    {{/sitehome}}
+    {{^sitehome}}
+        <div class="d-flex align-items-center position-relative">
+            <a role="button" data-toggle="collapse"
+               href="#coursecontentcollapse{{num}}"
+               id="collapssesection{{num}}"
+               aria-expanded="{{^contentcollapsed}}true{{/contentcollapsed}}{{#contentcollapsed}}false{{/contentcollapsed}}"
+               aria-controls="coursecontentcollapse{{num}}"
+               class="btn btn-icon mr-1 icons-collapse-expand justify-content-center
+                   {{^editing}} stretched-link {{/editing}}
+                   {{#contentcollapsed}} collapsed {{/contentcollapsed}}"
+               aria-label="{{name}}">
+            <span class="expanded-icon icon-no-margin p-2" title="{{#str}} collapse, core {{/str}}">
+                {{#pix}} t/expandedchevron, core {{/pix}}
+            </span>
+            <span class="collapsed-icon icon-no-margin p-2" title="{{#str}} expand, core {{/str}}">
+                <span class="dir-rtl-hide">{{#pix}} t/collapsedchevron, core {{/pix}}</span>
+                <span class="dir-ltr-hide">{{#pix}} t/collapsedchevron_rtl, core {{/pix}}</span>
+            </span>
+            </a>
+            <div>
+                <div>
+                    <a role="button" data-toggle="collapse"
+                        href="#coursecontentcollapse{{num}}"
+                        aria-controls="coursecontentcollapse{{num}}"
+                        aria-label="{{name}}"
+                        class="compass-section-title-btn"
+                    >
+                        {{#hassubname}}
+                            <div>
+                                <h4 class="sectionname course-content-item d-flex align-self-stretch align-items-center mb-0">
+                                    <span class="sectionsubtitle">{{{subname}}}</span>
+
+                                    {{#editing}}
+                                        {{^initialsection}}
+                                            <a href="#" data-action="renameSection" data-id="{{id}}" class="quickediticon visibleifjs compass-section-rename-btn">
+                                                <i class="icon fa fa-pencil fa-fw " title="Edit section name" role="img" aria-label="Edit section name"></i>
+                                            </a>
+                                        {{/initialsection}}
+                                    {{/editing}}
+                                </h4>
+                            </div>
+                        {{/hassubname}}
+
+                        <h3 class="sectionname course-content-item d-flex align-self-stretch align-items-center mb-0"
+                            id="sectionid-{{id}}-title" data-for="section_title" data-id="{{id}}" data-number="{{num}}"
+                        >
+                            <span class="sectiontitle compass-section-title">{{{title}}}</span>
+
+                            {{#editing}}
+                                {{^initialsection}}
+                                    <a href="#" data-action="renameSection" data-id="{{id}}" class="quickediticon visibleifjs compass-section-rename-btn">
+                                        <i class="icon fa fa-pencil fa-fw " title="Edit section name" role="img" aria-label="Edit section name"></i>
+                                    </a>
+                                {{/initialsection}}
+                            {{/editing}}
+                        </h3>
+                    </a>
+                </div>
+            </div>
+        </div>
+    {{/sitehome}}
+{{/headerdisplaymultipage}}

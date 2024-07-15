@@ -1,0 +1,19 @@
+.#{$prefix}-btn-back {
+    position:relative;
+    display:inline-block;
+    padding:.2rem .75rem .2rem 26px;
+    font-size: .9375rem;
+    line-height: 1.5;
+    border-radius: 1rem;
+
+    svg {
+        position:absolute;
+        left:2px;
+    }
+
+    &:hover {
+        color:$primary;
+        text-decoration:none;
+        background-color: #f2f2f2;
+    }
+}

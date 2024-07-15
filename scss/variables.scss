@@ -1,0 +1,29 @@
+$prefix:'compass';
+$primary: #077B7B;
+
+:root {
+    --custom_accent_1_dark:#000000;
+    --custom_accent_1_light:#000000;
+    --custom_accent_2_dark:#000000;
+    --custom_accent_2_light:#000000;
+    --vertical_bg_image_path: url(/course/format/compass/pix/defaults/vertical_bg_image.png) no-repeat center top;
+    --lesson_banner_image_path: none;
+    --lesson_banner_mobile_path: none;
+    --active_tab_highlight_colour: #000000;
+    --course_image_bottom_stripe_colour: #000000;
+    --progress_bar_bg_colour: #000000;
+    --progress_bar_fg_colour: #000000;
+    --vertical_bg_image_filter_colour: #000000;
+    --lesson_banner_left_panel_colour: #000000;
+    --lesson_banner_right_panel_colour: #000000;
+    --lesson_banner_bottom_stripe_colour: #000000;
+    --lesson_banner_text_colour: ;
+    --activity_icon_colour: white;
+    --activity_icon_container_colour: #000000;
+    --completion_todo_bg_colour: #000000;
+    --lesson_banner_image_path: url(/course/format/compass/pix/defaults/default_lesson_banner.png);
+    --weight_wheel_disabled_colour: #f2f2f2;
+
+    // Will need to be generated from the settings URL
+    --custom_home_banner:url(/course/format/compass/pix/defaults/default_home_banner.svg);
+}

@@ -1,0 +1,1160 @@
+:root {
+  --custom_accent_1_dark:#000000;
+  --custom_accent_1_light:#000000;
+  --custom_accent_2_dark:#000000;
+  --custom_accent_2_light:#000000;
+  --vertical_bg_image_path: url(/course/format/compass/pix/defaults/vertical_bg_image.png) no-repeat center top;
+  --lesson_banner_image_path: none;
+  --lesson_banner_mobile_path: none;
+  --active_tab_highlight_colour: #000000;
+  --course_image_bottom_stripe_colour: #000000;
+  --progress_bar_bg_colour: #000000;
+  --progress_bar_fg_colour: #000000;
+  --vertical_bg_image_filter_colour: #000000;
+  --lesson_banner_left_panel_colour: #000000;
+  --lesson_banner_right_panel_colour: #000000;
+  --lesson_banner_bottom_stripe_colour: #000000;
+  --lesson_banner_text_colour: ;
+  --activity_icon_colour: white;
+  --activity_icon_container_colour: #000000;
+  --completion_todo_bg_colour: #000000;
+  --lesson_banner_image_path: url(/course/format/compass/pix/defaults/default_lesson_banner.png);
+  --weight_wheel_disabled_colour: #f2f2f2;
+  --custom_home_banner:url(/course/format/compass/pix/defaults/default_home_banner.svg);
+}
+
+.compass-movesection-title {
+  font-weight: bold;
+  padding: 0.5rem 1rem;
+  margin-top: 1em;
+  text-transform: capitalize;
+}
+
+.compass-movesection-title:hover {
+  background-color: #e0f0f2;
+  border-color: #b8dce2;
+}
+
+.compass-section-title-btn {
+  color: #000000;
+}
+
+.modal-body .collapse-list .collapse-list-item {
+  padding-left: 2rem;
+}
+
+.modal-body .compass-section-coursehome .collapse-list-item, .modal-body .collapse-list .collapse-list-item-content {
+  padding-left: 1rem;
+}
+
+.modal-body .compass-section-title .collapse-list-item {
+  padding-left: 0;
+}
+
+.compass-courseindex-label {
+  font-weight: 700;
+  color: #495057;
+  text-transform: uppercase;
+  margin: 5px 0;
+}
+
+.drawercontent {
+  padding-left: 20px !important;
+}
+
+.addsectionbefore {
+  padding-bottom: 11px;
+}
+
+.addsectionbefore .changenumsections {
+  border-top: none !important;
+  border-bottom: 1px solid #3584c9;
+}
+
+.single-section h3.sectionname {
+  text-align: left !important;
+  clear: both;
+}
+
+.courseindex-item.sectiondivider .completioninfo {
+  display: none;
+}
+
+.courseindex-item.sectiondivider .courseindex-name {
+  font-weight: 600;
+}
+
+.compasscolourpopupbox {
+  border: 1px solid black;
+  cursor: pointer;
+  margin: 0 0 0 2px;
+  padding: 0 8px;
+}
+
+.compasscolourpopupsel {
+  position: absolute;
+  z-index: 500;
+}
+
+/* Remove blue bar from in-course calendar */
+.course-content .calendar-controls .current::before {
+  display: none;
+}
+
+.compass {
+  padding-left: 0;
+}
+
+.compass-assessments-allonepage {
+  padding: 0;
+}
+.compass-assessments-allonepage .compass-section-weights.compass-assessments-section {
+  position: relative;
+  min-height: 120px;
+}
+.compass-assessments-allonepage .compass-section-weights .compass-sectioninfo {
+  padding-right: 110px;
+  min-height: 45px;
+}
+.compass-assessments-allonepage .compass-section-weights .section_action_menu {
+  position: relative;
+  right: 110px;
+}
+.compass-assessments-allonepage .course-content-item-content {
+  padding-left: 40px;
+}
+.compass-assessments-allonepage .compass-assessments-textabove, .compass-assessments-allonepage .compass-assessments-textbelow {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-size: calc(0.90375rem + 0.045vw);
+  background-color: #f6f6f6;
+  border-radius: 6px;
+  padding: 12px;
+}
+.compass-assessments-allonepage .compass-assessments-textabove :last-child, .compass-assessments-allonepage .compass-assessments-textbelow :last-child {
+  margin-bottom: 0;
+}
+.compass-assessments-allonepage .course-section:first-child {
+  border-top: 1px solid #dee2e6;
+}
+.compass-assessments-allonepage .course-section:last-child:not(.section-summary) {
+  border-bottom: 1px solid #dee2e6;
+}
+.compass-assessments-allonepage .section .activity:not(:first-child) {
+  border-top: 2px solid #f8f9fa;
+}
+.compass-assessments-allonepage .compass-assessments-header-container {
+  display: flex;
+  width: 100%;
+}
+.compass-assessments-allonepage .compass-assessments-content-container {
+  min-height: 2em;
+}
+.compass-assessments-allonepage .compass-assessments-content-container.collapsed {
+  padding-bottom: 24px;
+}
+.compass-assessments-allonepage .compass-assessments-seemore {
+  position: absolute;
+  bottom: 5px;
+  left: 40px;
+  font-size: 0.85em;
+}
+.compass-assessments-allonepage .compass-assessments-expandcollapse-all {
+  padding-bottom: 20px;
+}
+.compass-assessments-allonepage .collapse,
+.compass-assessments-allonepage .collapsing {
+  min-height: 4.4em;
+  line-height: 1.5em;
+  overflow: hidden;
+}
+.compass-assessments-allonepage .collapse.compass-nosummary,
+.compass-assessments-allonepage .collapsing.compass-nosummary {
+  min-height: 0;
+}
+.compass-assessments-allonepage .collapse:not(.show) {
+  display: block;
+  max-height: 4.4em;
+  line-height: 1.5em;
+  overflow: hidden;
+}
+.compass-assessments-allonepage .collapse:not(.show).compass-nosummary {
+  min-height: 0;
+  max-height: 0;
+}
+.compass-assessments-allonepage .collapse:not(.show) .summarytext {
+  min-height: 4.4em;
+}
+.compass-assessments-allonepage .collapse:not(.show) .summarytext p {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  -webkit-line-clamp: 2;
+  text-overflow: ellipsis;
+}
+.compass-assessments-allonepage .btn.btn-icon {
+  width: 32px;
+  height: 32px;
+}
+.compass-assessments-allonepage .collapsed-icon .icon, .compass-assessments-allonepage .expanded-icon .icon {
+  font-size: 14px;
+  width: 14px;
+  height: 14px;
+}
+.compass-assessments-allonepage .compass-section-title-btn h3.sectionname {
+  font-size: 1.4em;
+}
+
+.compass-assessments-oneperpage {
+  padding: 0;
+}
+.compass-assessments-oneperpage .compass-assessments-textabove, .compass-assessments-oneperpage .compass-assessments-textbelow {
+  padding-left: 40px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-size: 18px;
+}
+
+.compass-weightwheel-container {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100px;
+  height: 100px;
+}
+
+.compass-weightwheel-countsfor {
+  font-size: 0.8em;
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  margin: 6px 0 0 0;
+}
+
+.compass-weightwheel-wrapper {
+  position: relative;
+  margin-top: 20px;
+}
+
+.compass-weightwheel-value {
+  position: absolute;
+  width: 100%;
+  top: 15px;
+  height: 80px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.compass-weightwheel-percent {
+  display: block;
+  font-size: 1.4em;
+  line-height: 20px;
+}
+
+.compass-weightwheel-percent-breakdown {
+  display: block;
+  font-size: 0.65em;
+}
+
+.compass-weightwheel-percent-breakdown-edit {
+  display: block;
+  font-size: 0.65em;
+}
+
+.compass-weightwheel-wrapper:hover .compass-weightwheel-percent-edit {
+  display: none;
+}
+
+.compass-weightwheel-wrapper:hover .compass-weightwheel-percent-breakdown-edit {
+  display: none;
+}
+
+.compass-weightwheel-wrapper .compass-weightwheel-edit {
+  display: none !important;
+}
+
+.compass-weightwheel-wrapper:hover .compass-weightwheel-edit {
+  display: block !important;
+}
+
+.compass-weightwheel-percent-edit {
+  display: block;
+  font-size: 1.4em;
+  line-height: 20px;
+}
+
+.compass-bonus-container {
+  position: absolute;
+  top: 0;
+  right: 10px;
+  width: 80px;
+  height: 100px;
+}
+
+.compass-bonus-wrapper {
+  width: 80px;
+  height: 80px;
+  margin-top: 7px;
+  border: 6px solid #f2f2f2;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.compass-bonus-upto {
+  font-size: 0.8em;
+  text-align: center;
+  margin: 6px 0 0 0;
+}
+
+.compass-bonus-percent {
+  font-size: 1.4em;
+  line-height: 15px;
+  padding-bottom: 5px;
+}
+.compass-bonus-percent span {
+  position: relative;
+  top: 1px;
+  font-size: 1.4em;
+  font-weight: bold;
+}
+
+.compass-bonus-percent-edit {
+  display: block;
+  font-size: 1.4em;
+  line-height: 15px;
+  padding-bottom: 5px;
+}
+.compass-bonus-percent-edit span {
+  position: relative;
+  top: 1px;
+  font-size: 1.4em;
+  font-weight: bold;
+}
+
+.compass-bonus-wrapper:hover .compass-bonus-percent-edit {
+  display: none !important;
+}
+
+.compass-bonus-wrapper:hover .compass-bonus-edit {
+  display: block !important;
+}
+
+.compass-bonus-edit {
+  display: none;
+}
+
+.compass-ungraded-container {
+  position: absolute;
+  top: 0;
+  right: 10px;
+  width: 80px;
+  height: 100px;
+}
+
+.compass-ungraded-wrapper {
+  width: 80px;
+  height: 80px;
+  margin-top: 7px;
+  border: 6px solid #f2f2f2;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.compass-ungraded {
+  font-size: 0.8em;
+  text-align: center;
+  margin: 6px 0 0 0;
+}
+
+.compass-ungraded-icons {
+  font-size: 1.4em;
+  line-height: 15px;
+}
+
+.compass-ungraded-icons-edit {
+  font-size: 1.4em;
+  line-height: 15px;
+}
+
+.compass-ungraded-edit {
+  display: none;
+}
+
+.compass-ungraded-wrapper:hover .compass-ungraded-edit {
+  display: block !important;
+}
+
+.compass-ungraded-wrapper:hover .compass-ungraded-icons-edit {
+  display: none !important;
+}
+
+.format-compass .compass-home {
+  margin-top: 22px;
+  /*.course-section:last-child:not(.section-summary) {
+      border-bottom:none;
+  }*/
+}
+.format-compass .compass-home .compass-course-image {
+  position: relative;
+  overflow: hidden;
+  height: 0;
+  padding-top: 35.71%; /* img height / img width * container percent  (280/784)*100 */
+  background-image: var(--custom_home_banner);
+  background-position: center;
+  background-size: cover;
+  border-radius: 11px 11px;
+}
+@media (min-width: 576px) {
+  .format-compass .compass-home .compass-course-image {
+    border-radius: 17px 17px;
+  }
+}
+.format-compass .compass-home .action-menu-trigger a:after {
+  display: none;
+}
+.format-compass .compass-home .compass-course-image-bar {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 10%;
+  background-color: var(--course_image_bottom_stripe_colour);
+}
+.format-compass .compass-course-control {
+  display: flex;
+}
+
+.compass-home.activitylistlayout_simplebuttons_2columns .compass-lessons-section-box .section,
+.compass-home.activitylistlayout_simplebuttons_3columns .compass-lessons-section-box .section {
+  position: relative;
+}
+.compass-home.activitylistlayout_simplebuttons_2columns .compass-lessons-section-box .section .compass-activity,
+.compass-home.activitylistlayout_simplebuttons_3columns .compass-lessons-section-box .section .compass-activity {
+  width: 100%;
+}
+.compass-home.activitylistlayout_simplebuttons_2columns .compass-lessons-section-box .section .activity-info,
+.compass-home.activitylistlayout_simplebuttons_3columns .compass-lessons-section-box .section .activity-info {
+  display: none !important;
+}
+.compass-home.activitylistlayout_simplebuttons_2columns .compass-lessons-section-box .section .compass-unread-indicator,
+.compass-home.activitylistlayout_simplebuttons_3columns .compass-lessons-section-box .section .compass-unread-indicator {
+  height: 21px;
+  min-width: 21px;
+  line-height: 17px;
+  padding: 0;
+  font-size: 10px;
+  text-align: center;
+  border-radius: 10px;
+  color: var(--unread_notification_text_colour);
+  background: var(--unread_notification_bg_colour);
+  position: absolute;
+  left: 36px;
+  top: -4px;
+  border: 2px solid #ffffff;
+}
+
+@media (min-width: 576px) {
+  body:not(.editing) .compass-home.activitylistlayout_simplebuttons_2columns .compass-lessons-section-box .section,
+  body:not(.editing) .compass-home.activitylistlayout_simplebuttons_3columns .compass-lessons-section-box .section {
+    display: grid !important;
+    grid-template-columns: repeat(auto-fill, calc(50% - 15px));
+    grid-gap: 15px;
+    justify-content: space-between;
+  }
+  body:not(.editing) .compass-home.activitylistlayout_simplebuttons_2columns .compass-lessons-section-box .section .activity,
+  body:not(.editing) .compass-home.activitylistlayout_simplebuttons_3columns .compass-lessons-section-box .section .activity {
+    border: 1px solid #e5e9ec !important;
+    border-radius: 6px;
+    padding: 0;
+  }
+  body:not(.editing) .compass-home.activitylistlayout_simplebuttons_2columns .compass-lessons-section-box .section .activity .activitytitle,
+  body:not(.editing) .compass-home.activitylistlayout_simplebuttons_3columns .compass-lessons-section-box .section .activity .activitytitle {
+    position: static;
+  }
+  body:not(.editing) .compass-home.activitylistlayout_simplebuttons_2columns .compass-lessons-section-box .section .activity .activity-item,
+  body:not(.editing) .compass-home.activitylistlayout_simplebuttons_3columns .compass-lessons-section-box .section .activity .activity-item {
+    height: 100%;
+    padding: 9px;
+  }
+  body:not(.editing) .compass-home.activitylistlayout_simplebuttons_2columns .compass-lessons-section-box .section .activity .activity-item:hover,
+  body:not(.editing) .compass-home.activitylistlayout_simplebuttons_3columns .compass-lessons-section-box .section .activity .activity-item:hover {
+    background-color: #f8f9fa;
+  }
+  body:not(.editing) .compass-home.activitylistlayout_simplebuttons_2columns .compass-lessons-section-box .section .activity .activity-item .courseicon,
+  body:not(.editing) .compass-home.activitylistlayout_simplebuttons_3columns .compass-lessons-section-box .section .activity .activity-item .courseicon {
+    margin-right: 9px !important;
+  }
+  body:not(.editing) .compass-home.activitylistlayout_simplebuttons_2columns .compass-lessons-section-box .section .activity .activity-item .compass-availability-restricted,
+  body:not(.editing) .compass-home.activitylistlayout_simplebuttons_3columns .compass-lessons-section-box .section .activity .activity-item .compass-availability-restricted {
+    display: none !important;
+  }
+  body:not(.editing) .compass-home.activitylistlayout_simplebuttons_2columns .compass-lessons-section-box .section .activity .activity-item .availabilityinfo,
+  body:not(.editing) .compass-home.activitylistlayout_simplebuttons_3columns .compass-lessons-section-box .section .activity .activity-item .availabilityinfo {
+    padding-left: 5px;
+  }
+  body:not(.editing) .compass-home.activitylistlayout_simplebuttons_2columns .compass-lessons-section-box .section .activity .activity-item .availabilityinfo .icon,
+  body:not(.editing) .compass-home.activitylistlayout_simplebuttons_3columns .compass-lessons-section-box .section .activity .activity-item .availabilityinfo .icon {
+    margin-right: 0;
+  }
+  body:not(.editing) .compass-home.activitylistlayout_simplebuttons_2columns .compass-lessons-section-box .section .activity .activityiconcontainer,
+  body:not(.editing) .compass-home.activitylistlayout_simplebuttons_3columns .compass-lessons-section-box .section .activity .activityiconcontainer {
+    width: 30px;
+    height: 42px;
+    background-color: transparent !important;
+  }
+  body:not(.editing) .compass-home.activitylistlayout_simplebuttons_2columns .compass-lessons-section-box .section .activity .activityiconcontainer .activityicon,
+  body:not(.editing) .compass-home.activitylistlayout_simplebuttons_3columns .compass-lessons-section-box .section .activity .activityiconcontainer .activityicon {
+    filter: none !important;
+  }
+  body:not(.editing) .compass-home.activitylistlayout_simplebuttons_2columns .compass-lessons-section-box .section .activity .description .activity-altcontent,
+  body:not(.editing) .compass-home.activitylistlayout_simplebuttons_3columns .compass-lessons-section-box .section .activity .description .activity-altcontent {
+    display: none !important;
+  }
+  body:not(.editing) .compass-home.activitylistlayout_simplebuttons_2columns .compass-lessons-section-box .section .activity.modtype_sectiondivider, body:not(.editing) .compass-home.activitylistlayout_simplebuttons_2columns .compass-lessons-section-box .section .activity.modtype_label,
+  body:not(.editing) .compass-home.activitylistlayout_simplebuttons_3columns .compass-lessons-section-box .section .activity.modtype_sectiondivider,
+  body:not(.editing) .compass-home.activitylistlayout_simplebuttons_3columns .compass-lessons-section-box .section .activity.modtype_label {
+    border: 0 !important;
+    grid-column: 1/-1;
+    margin: 0;
+  }
+  body:not(.editing) .compass-home.activitylistlayout_simplebuttons_2columns .compass-lessons-section-box .section .activity.modtype_sectiondivider h4, body:not(.editing) .compass-home.activitylistlayout_simplebuttons_2columns .compass-lessons-section-box .section .activity.modtype_label h4,
+  body:not(.editing) .compass-home.activitylistlayout_simplebuttons_3columns .compass-lessons-section-box .section .activity.modtype_sectiondivider h4,
+  body:not(.editing) .compass-home.activitylistlayout_simplebuttons_3columns .compass-lessons-section-box .section .activity.modtype_label h4 {
+    margin-bottom: 0;
+  }
+  body:not(.editing) .compass-home.activitylistlayout_simplebuttons_2columns .compass-lessons-section-box .section .activity.modtype_sectiondivider .description, body:not(.editing) .compass-home.activitylistlayout_simplebuttons_2columns .compass-lessons-section-box .section .activity.modtype_label .description,
+  body:not(.editing) .compass-home.activitylistlayout_simplebuttons_3columns .compass-lessons-section-box .section .activity.modtype_sectiondivider .description,
+  body:not(.editing) .compass-home.activitylistlayout_simplebuttons_3columns .compass-lessons-section-box .section .activity.modtype_label .description {
+    position: static;
+  }
+  body:not(.editing) .compass-home.activitylistlayout_simplebuttons_2columns .compass-lessons-section-box .section .activity.modtype_sectiondivider .description .activity-altcontent, body:not(.editing) .compass-home.activitylistlayout_simplebuttons_2columns .compass-lessons-section-box .section .activity.modtype_label .description .activity-altcontent,
+  body:not(.editing) .compass-home.activitylistlayout_simplebuttons_3columns .compass-lessons-section-box .section .activity.modtype_sectiondivider .description .activity-altcontent,
+  body:not(.editing) .compass-home.activitylistlayout_simplebuttons_3columns .compass-lessons-section-box .section .activity.modtype_label .description .activity-altcontent {
+    display: block !important;
+  }
+  body:not(.editing) .compass-home.activitylistlayout_simplebuttons_2columns .compass-lessons-section-box .section .compass-unread-indicator,
+  body:not(.editing) .compass-home.activitylistlayout_simplebuttons_3columns .compass-lessons-section-box .section .compass-unread-indicator {
+    position: absolute;
+    left: 27px;
+    top: 7px;
+  }
+  body:not(.editing) .compass-home.activitylistlayout_simplebuttons_2columns .compass-lessons-section-box .section .activity-dates,
+  body:not(.editing) .compass-home.activitylistlayout_simplebuttons_3columns .compass-lessons-section-box .section .activity-dates {
+    display: none;
+  }
+}
+@media (min-width: 768px) {
+  body:not(.editing) .compass-home.activitylistlayout_simplebuttons_2columns .compass-lessons-section-box .section {
+    display: grid !important;
+    grid-template-columns: repeat(auto-fill, calc(50% - 15px));
+    grid-gap: 15px;
+    justify-content: space-between;
+  }
+  body:not(.editing) .compass-home.activitylistlayout_simplebuttons_3columns .compass-lessons-section-box .section {
+    display: grid !important;
+    grid-template-columns: repeat(auto-fill, calc(33.3% - 15px));
+    grid-gap: 15px;
+    justify-content: space-between;
+  }
+}
+.compass-lessons {
+  position: relative;
+  z-index: 2;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.compass-lessons .compass-lessons-section-container {
+  border-right: none;
+  border-left: none;
+  min-height: 140px;
+  padding-right: 0px;
+  padding-left: 0px;
+  margin-bottom: 8px;
+  margin-top: 0px;
+  display: flex;
+  border: 0;
+  border-radius: 11px;
+  box-shadow: 5px 0px 0px 8px rgb(255, 255, 255);
+}
+.compass-lessons .compass-lessons-section.course-section {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+.compass-lessons .compass-lessons-section .compass-lessons-progress-summary.activity-count {
+  color: #000000 !important;
+  display: flex !important;
+  align-items: flex-end;
+  padding-right: 20px;
+}
+.compass-lessons .compass-lessons-section .activity-count {
+  margin: 2px 2px 0 2px !important;
+}
+.compass-lessons .compass-lessons-section .compass-lessons-mods-summary {
+  display: flex;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+}
+.compass-lessons .compass-lessons-section-box {
+  position: relative;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 1px solid #e5e8eb;
+  border-radius: 11px;
+  padding: 6px 15px 10px 15px;
+  width: 100%;
+  min-height: 140px;
+}
+@media (min-width: 576px) {
+  .compass-lessons .compass-lessons-section-box {
+    width: 77%;
+    max-width: calc(100% - 140px);
+    border-radius: 11px 0 0 11px;
+    border-right: none;
+  }
+}
+@media (min-width: 768px) {
+  .compass-lessons .compass-lessons-section-box {
+    width: 68%;
+    border-radius: 11px 0 0 11px;
+    border-right: none;
+  }
+}
+@media (min-width: 992px) {
+  .compass-lessons .compass-lessons-section-box {
+    width: calc(100% - 250px);
+    border-radius: 11px 0 0 11px;
+    border-right: none;
+  }
+}
+.compass-lessons .compass-lessons-section-box .section_action_menu {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.compass-lessons .compass-lessons-section-box .compass-section-header {
+  font-size: 1rem;
+}
+.compass-lessons .compass-lessons-section-box .compass-section-header .compass-section-title-container {
+  padding-right: 0px;
+  position: relative;
+  display: flex;
+  flex-wrap: nowrap;
+}
+.compass-lessons .compass-lessons-section-box .compass-section-header .compass-section-title {
+  font-size: 20px;
+  margin-right: 10px;
+  line-height: 30px;
+  font-weight: normal;
+  display: inline-block;
+}
+.compass-lessons .compass-lessons-section-box .compass-section-header .compass-section-title.compass-header-offset {
+  margin-top: 10px;
+}
+.compass-lessons .compass-lessons-section-box .compass-section-header .compass-section-title.compass-section-hassubname {
+  font-size: 0.9375rem;
+  line-height: 22px;
+  color: #000000;
+  margin-right: 10px;
+}
+.compass-lessons .compass-lessons-section-box .compass-section-header .compass-section-rename-btn, .compass-lessons .compass-lessons-section-box .compass-section-header .add-to-sharing-cart {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  position: relative;
+  top: -1px;
+}
+.compass-lessons .compass-lessons-section-box .compass-section-header .add-to-sharing-cart {
+  margin-left: 5px;
+}
+.compass-lessons .compass-lessons-section-box .compass-section-header .icon.fa-pencil, .compass-lessons .compass-lessons-section-box .compass-section-header .icon.fa-shopping-basket {
+  margin-right: 0;
+  margin-left: 0;
+}
+.compass-lessons .compass-lessons-section-box .section {
+  display: none;
+}
+.compass-lessons .changenumsections {
+  background: #ffffff;
+}
+.compass-lessons .changenumsections ul {
+  display: none;
+}
+.compass-lessons .compass-lessons-summary-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.compass-sections-container {
+  position: relative;
+}
+
+@media (min-width: 576px) {
+  .compass-window-image {
+    background: var(--vertical_bg_image_path);
+    min-width: 140px;
+    width: 23%;
+    height: 100%;
+    position: absolute;
+    right: 0;
+    z-index: 1;
+  }
+  .compass-window-image .compass-window-overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: var(--vertical_bg_image_filter_colour);
+  }
+}
+@media (min-width: 768px) {
+  .compass-window-image {
+    width: 32%;
+    min-width: 140px;
+  }
+}
+@media (min-width: 992px) {
+  .compass-window-image {
+    width: 32%;
+    max-width: 250px;
+  }
+}
+
+.compass-progressbar-container {
+  width: 100%;
+  height: 5px;
+  background-color: var(--progress_bar_bg_colour);
+  border-radius: 3px;
+}
+
+.compass-progressbar {
+  height: 5px;
+  background-color: var(--progress_bar_fg_colour);
+  border-radius: 3px;
+}
+
+.format-compass .drawer-toggles .drawer-toggler {
+  position: fixed;
+  z-index: 3;
+}
+
+.editing .compass-lessons .compass-lessons-section.course-section {
+  margin-bottom: 4px;
+}
+
+.compass-lesson {
+  padding-left: 0;
+}
+
+.single-section .compass {
+  padding-left: 0;
+}
+
+.compass-lesson .section_action_menu {
+  position: absolute;
+  top: 10px;
+  right: 0px;
+}
+.compass-lesson .course-section {
+  position: relative;
+}
+.compass-lesson .course-section-header {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  background-image: var(--lesson_banner_mobile_path);
+  background-position: center;
+  background-size: cover;
+  background-color: #dcdcdc;
+  height: 116px;
+  border-radius: 7px;
+  overflow: hidden;
+  color: var(--lesson_banner_text_colour);
+}
+.compass-lesson .course-section-header a {
+  color: var(--lesson_banner_text_colour);
+}
+@media (min-width: 576px) {
+  .compass-lesson .course-section-header {
+    background-image: var(--lesson_banner_image_path);
+    height: 140px;
+    border-radius: 11px;
+  }
+}
+.compass-lesson .course-section-header .compass-section-header {
+  font-size: 17px;
+  padding: 16px 20px 16px 20px;
+}
+@media (min-width: 576px) {
+  .compass-lesson .course-section-header .compass-section-header {
+    font-size: 20px;
+  }
+}
+.compass-lesson .course-section-header .compass-section-header.compass-section-hassubname .compass-section-title {
+  font-weight: normal;
+  display: inline;
+}
+.compass-lesson .course-section-header .compass-lesson-image-bar {
+  width: 100%;
+  height: 16px;
+  background: var(--lesson_banner_bottom_stripe_colour);
+}
+@media (min-width: 576px) {
+  .compass-lesson .course-section-header .compass-lesson-image-bar {
+    height: 20px;
+  }
+}
+.compass-lesson .course-section-header .compass-lesson-image-overlay-left {
+  display: flex;
+  align-items: center;
+  min-width: 100%;
+  height: 100%;
+  background-color: var(--lesson_banner_left_panel_colour);
+}
+@media (min-width: 576px) {
+  .compass-lesson .course-section-header .compass-lesson-image-overlay-left {
+    background-image: var(--lesson_banner_left_panel_colour);
+    height: 140px;
+    min-width: 50%;
+    max-width: 70ch;
+  }
+}
+.compass-lesson .course-section-header .compass-lesson-image-overlay-left.compass-has-stripe {
+  height: calc(100% - 16px);
+}
+@media (min-width: 576px) {
+  .compass-lesson .course-section-header .compass-lesson-image-overlay-left.compass-has-stripe {
+    height: calc(100% - 20px);
+  }
+}
+.compass-lesson .course-section-header .compass-lesson-image-overlay-left .compass-section-hassubname {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+.compass-lesson .course-section-header .compass-lesson-image-overlay-left .compass-section-hassubname .compass-section-title {
+  margin-bottom: 18px;
+}
+.compass-lesson .course-section-header .compass-lesson-image-overlay-left .compass-section-hassubname .compass-section-subname-container {
+  margin-top: 10px;
+}
+.compass-lesson .course-section-header .compass-lesson-image-overlay-left .compass-section-hassubname .compass-section-subname-container .compass-section-title {
+  margin-bottom: 0px;
+  font-weight: bold;
+}
+.compass-lesson .course-section-header .compass-lesson-image-overlay-right {
+  display: none;
+}
+@media (min-width: 576px) {
+  .compass-lesson .course-section-header .compass-lesson-image-overlay-right {
+    display: block;
+    height: 100%;
+    flex: 1;
+    background-color: var(--lesson_banner_right_panel_colour);
+  }
+}
+.compass-lesson .course-section-header .compass-lesson-image-overlay-right.compass-has-stripe {
+  height: calc(100% - 16px);
+}
+@media (min-width: 576px) {
+  .compass-lesson .course-section-header .compass-lesson-image-overlay-right.compass-has-stripe {
+    height: calc(100% - 20px);
+  }
+}
+
+.single-section .compass-section-header {
+  margin-bottom: 0;
+}
+
+.format-compass .section {
+  position: relative;
+}
+.format-compass .course-section {
+  padding: 10px 0;
+}
+.format-compass .section .activity-item {
+  border: none;
+  padding: 4px;
+}
+.format-compass .section .activity:not(:first-child) {
+  border-top: 2px solid #f8f9fa;
+}
+.format-compass .activity-information {
+  margin-top: 6px;
+}
+.format-compass .description .course-description-item {
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+  padding-top: 0.5em;
+  padding-bottom: 0;
+}
+.format-compass .description .course-description-item:first-child {
+  padding-top: 0.5em;
+  margin-top: 0.5em;
+}
+.format-compass .description .course-description-item:last-child {
+  padding-bottom: 0.5em;
+  margin-bottom: 0.5em;
+}
+.format-compass .description .course-description-item:last-child .description-inner {
+  padding-top: 0;
+}
+.format-compass .activityiconcontainer.courseicon {
+  margin-right: 0.6em !important;
+}
+.format-compass .activityiconcontainer {
+  background-color: var(--activity_icon_container_colour) !important;
+}
+.format-compass .activityiconcontainer .activityicon {
+  filter: var(--activity_icon_colour) !important;
+}
+.format-compass .activityname {
+  line-height: 1.4;
+}
+.format-compass .activityiconcontainer {
+  width: 42px;
+  height: 42px;
+}
+.format-compass .automatic-completion-conditions .badge.badge-light.badge-pill {
+  background-color: var(--completion_todo_bg_colour) !important;
+}
+.format-compass .course-description-item.summarytext .description-inner .no-overflow :last-child {
+  margin-bottom: 0;
+}
+.format-compass .activitytitle {
+  position: relative;
+}
+.format-compass .compass-activity {
+  width: 100%;
+}
+
+.editing .compass .section .activity {
+  border-top: none;
+}
+.editing .compass .section .activity-item {
+  border: 1px solid #dcdcdc;
+  padding: 1.5rem;
+}
+
+.compass-btn-back {
+  position: relative;
+  display: inline-block;
+  padding: 0.2rem 0.75rem 0.2rem 26px;
+  font-size: 0.9375rem;
+  line-height: 1.5;
+  border-radius: 1rem;
+}
+.compass-btn-back svg {
+  position: absolute;
+  left: 2px;
+}
+.compass-btn-back:hover {
+  color: #077B7B;
+  text-decoration: none;
+  background-color: #f2f2f2;
+}
+
+.format-compass .activity .automatic-completion-conditions strong {
+  font-weight: bold !important;
+}
+.format-compass .activity .automatic-completion-conditions :first-child:last-child {
+  position: relative;
+}
+.format-compass .activity .automatic-completion-conditions :first-child:last-child :last-child {
+  display: none;
+}
+@media (min-width: 768px) {
+  .format-compass .activity .automatic-completion-conditions :first-child:last-child :last-child {
+    display: inline;
+  }
+}
+.format-compass .activity .automatic-completion-conditions :first-child:last-child.alert-success :last-child {
+  display: none !important;
+}
+.format-compass .activity .automatic-completion-conditions :first-child:last-child.alert-success strong {
+  font-weight: normal !important;
+}
+.format-compass .activity .automatic-completion-conditions :first-child:last-child.alert-success :after {
+  content: " ";
+  position: absolute;
+  right: 6px;
+  width: 5px;
+  height: 12px;
+  background-color: #f8f9fa;
+}
+.format-compass .activity .automatic-completion-conditions .alert-success {
+  background-color: #f8f9fa !important;
+  color: #1d2125 !important;
+}
+.format-compass .activity .automatic-completion-conditions .badge:not(.alert-success) strong {
+  display: inline-block;
+  width: 30px;
+  text-wrap: nowrap;
+  overflow: hidden;
+}
+@media (min-width: 768px) {
+  .format-compass .activity .automatic-completion-conditions .badge:not(.alert-success) strong {
+    display: inline;
+    width: auto;
+  }
+}
+.format-compass .activity-header .automatic-completion-conditions .alert-success {
+  background-color: #f8f9fa !important;
+  color: #1d2125 !important;
+}
+.format-compass .activity-information button {
+  border-color: #077B7B;
+  color: #077B7B;
+  border-radius: 16px;
+  font-size: 80%;
+  padding: 0.25rem 0.5rem;
+}
+.format-compass .activity-information button:hover {
+  color: #077B7B;
+  background-color: #f8f9fa;
+  text-decoration: underline;
+}
+.format-compass .activity-information button.btn-success {
+  background-color: #f8f9fa;
+  position: relative;
+  padding-left: 21px;
+}
+.format-compass .activity-information button.btn-success i {
+  position: absolute;
+  left: 6px;
+  top: 8px;
+}
+.format-compass .activity-information button.btn-success:hover {
+  color: #077B7B;
+  background-color: #ededed;
+}
+.format-compass.path-mod .activity-header:not(:empty) {
+  background-color: transparent;
+  margin-bottom: 0;
+  padding-left: 0;
+  padding-right: 0;
+  border-radius: 0;
+}
+
+.format-compass .moremenu .nav-link {
+  height: 59px;
+}
+.format-compass .moremenu .nav-link.active, .format-compass .moremenu .nav-link.active:hover {
+  position: relative;
+  font-weight: bold;
+  border-bottom-color: transparent;
+}
+.format-compass .moremenu .nav-link.active::after, .format-compass .moremenu .nav-link.active:hover::after {
+  content: " ";
+  position: absolute;
+  left: 0;
+  bottom: -8px;
+  display: block;
+  height: 10px;
+  width: 100%;
+  background-color: var(--active_tab_highlight_colour);
+  border-radius: 4px;
+  margin-left: 0;
+}
+
+body .compass .modtype_sectiondivider {
+  border-top: 2px solid #f8f9fa;
+}
+body .compass .modtype_sectiondivider:first-child {
+  border-top: none;
+}
+body .compass .modtype_sectiondivider .activity-item {
+  display: flex;
+  flex-direction: row-reverse;
+  border: 0;
+  padding: 4px 4px 4px 4px;
+}
+body .compass .modtype_sectiondivider h4 {
+  font-size: 1.06rem;
+  margin-bottom: 0;
+}
+body .compass .modtype_sectiondivider .description {
+  width: 100%;
+  align-self: center;
+}
+body .compass .modtype_sectiondivider .text_to_html {
+  margin-top: 0.5rem;
+}
+body .compass .modtype_sectiondivider .text_to_html p:last-child {
+  margin-bottom: 0;
+}
+
+body.editing .compass .modtype_sectiondivider .activity-item {
+  border: 1px solid #dcdcdc;
+  padding: 1.5em;
+}
+body.editing .compass .modtype_sectiondivider .activity-item .contentwithoutlink {
+  padding-right: 12px;
+}
+
+.compass-courseindex-label-lesson {
+  font-weight: 700;
+  color: #495057;
+  text-transform: uppercase;
+  margin: 5px 0;
+  border-top: 1px solid lightgray;
+  padding-top: 15px;
+}
+
+.compass-courseindex-label-assessment {
+  font-weight: 700;
+  color: #495057;
+  text-transform: uppercase;
+  margin: 5px 0;
+  border-top: 1px solid lightgray;
+  padding-top: 15px;
+}
+
+#courseindex-lessons-container {
+  margin-left: -15px;
+}
+
+#courseindex-assessments-container {
+  margin-left: -15px;
+}
+
+#courseindex-home-container .courseindex-item {
+  padding-left: 0px !important;
+}
+
+.not-divider .completioninfo.completion_complete {
+  padding-left: 20px !important;
+}
+
+.not-divider .completioninfo.completion_incomplete {
+  padding-left: 20px !important;
+}
+
+.not-divider .completioninfo.completion_none {
+  padding-left: 42px !important;
+}
+
+.not-divider a {
+  flex: 1;
+}
+
+.courseindex .courseindex-item .completioninfo.completion_complete {
+  color: #077b7b !important;
+}
+
+.courseindex-item.sectiondivider .courseindex-name {
+  padding-left: 20px;
+}
+
+#courseindex-home-container .courseindex-section-title {
+  text-transform: uppercase;
+  margin-left: -6px;
+}

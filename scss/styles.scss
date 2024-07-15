@@ -1,0 +1,74 @@
+// Loading bootstrap from the boost theme so we don't have to duplicate it in the format.
+@import '../../../theme/boost/scss/bootstrap/functions';
+@import '../../../theme/boost/scss/bootstrap/variables';
+@import '../../../theme/boost/scss/bootstrap/mixins';
+// Format SCSS
+@import 'variables';
+
+// Old css from styles.css, will need to place these below in proper SCSS files.
+.compass-movesection-title { font-weight:bold; padding: 0.5rem 1rem; margin-top:1em; text-transform:capitalize; }
+.compass-movesection-title:hover {
+    background-color: #e0f0f2;
+    border-color: #b8dce2;
+}
+.compass-section-title-btn {
+    color:#000000;
+}
+
+.modal-body .collapse-list .collapse-list-item { padding-left:2rem; }
+.modal-body .compass-section-coursehome .collapse-list-item, .modal-body .collapse-list .collapse-list-item-content { padding-left:1rem; }
+.modal-body .compass-section-title .collapse-list-item { padding-left:0; }
+
+.compass-courseindex-label {
+    font-weight:700;
+    color:#495057;
+    text-transform:uppercase;
+    margin:5px 0;
+}
+
+.drawercontent {
+    padding-left: 20px !important;
+}
+
+.addsectionbefore { padding-bottom: 11px;}
+.addsectionbefore .changenumsections { border-top: none !important; border-bottom: 1px solid #3584c9; }
+.single-section h3.sectionname { text-align: left !important; clear: both; }
+
+.courseindex-item.sectiondivider .completioninfo { display:none; }
+.courseindex-item.sectiondivider .courseindex-name { font-weight:600; }
+
+.compasscolourpopupbox {
+    border: 1px solid black;
+    cursor: pointer;
+    margin: 0 0 0 2px;
+    padding: 0 8px;
+}
+
+.compasscolourpopupsel {
+    position: absolute;
+    z-index: 500;
+}
+
+/* Remove blue bar from in-course calendar */
+.course-content .calendar-controls .current::before {
+    display:none;
+}
+
+.#{$prefix} {
+    padding-left:0;
+}
+
+@import 'assessments/assessments';
+@import 'assessments/weightwheels';
+@import 'assessments/bonus';
+@import 'assessments/ungraded';
+@import 'home/home';
+@import 'home/tiles';
+@import 'lessons/lessons';
+@import 'lessons/banner';
+@import 'mods/modules';
+@import 'mods/buttons';
+@import 'mods/completionindicators';
+@import 'mods/navigation';
+@import 'mods/sectiondivider';
+@import 'courseindex/courseindex';

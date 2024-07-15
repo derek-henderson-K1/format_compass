@@ -1,0 +1,135 @@
+.#{$prefix}-assessments-allonepage {
+    padding:0;
+
+    .#{$prefix}-section-weights {
+        &.#{$prefix}-assessments-section  {
+            position:relative;
+            min-height:120px;
+        }
+
+        .#{$prefix}-sectioninfo {
+            padding-right:110px;
+            min-height:45px;
+        }
+
+        .section_action_menu {
+            position:relative;
+            right:110px;
+        }
+    }
+
+
+    .course-content-item-content {
+        padding-left:40px;
+    }
+
+    .#{$prefix}-assessments-textabove, .#{$prefix}-assessments-textbelow {
+        margin-top:20px;
+        margin-bottom:20px;
+        font-size:calc(0.90375rem + 0.045vw);
+        background-color:#f6f6f6;
+        border-radius:6px;
+        padding:12px;
+
+        :last-child { margin-bottom:0; }
+    }
+
+    .course-section:first-child {
+        border-top: 1px solid #dee2e6;
+    }
+
+    .course-section:last-child:not(.section-summary) {
+        border-bottom: 1px solid #dee2e6;
+    }
+
+    .section .activity:not(:first-child) {
+        border-top:2px solid #f8f9fa;
+    }
+
+    .compass-assessments-header-container {
+        display:flex;
+        width:100%;
+    }
+
+    .#{$prefix}-assessments-content-container {
+        min-height:2em;
+
+        &.collapsed {
+            padding-bottom:24px;
+        }
+    }
+
+    .#{$prefix}-assessments-seemore {
+        position:absolute;
+        bottom:5px;
+        left:40px;
+        font-size:0.85em;
+    }
+
+    .#{$prefix}-assessments-expandcollapse-all {
+        padding-bottom:20px;
+    }
+
+    .collapse,
+    .collapsing {
+        min-height:4.4em;
+        line-height:1.5em;
+        overflow:hidden;
+
+        &.compass-nosummary {
+            min-height:0;
+        }
+    }
+
+    .collapse:not(.show) {
+        display:block;
+        max-height:4.4em;
+        line-height:1.5em;
+        overflow:hidden;
+
+        &.compass-nosummary {
+            min-height:0;
+            max-height:0;
+        }
+
+        .summarytext {
+            min-height:4.4em;
+        }
+
+        .summarytext p {
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            -webkit-line-clamp: 2;
+            text-overflow: ellipsis;
+        }
+    }
+
+    .btn.btn-icon {
+        width:32px;
+        height:32px;
+    }
+
+    .collapsed-icon .icon, .expanded-icon .icon {
+        font-size:14px;
+        width:14px;
+        height:14px;
+    }
+
+    .#{$prefix}-section-title-btn {
+        h3.sectionname {
+            font-size:1.4em;
+        }
+    }
+}
+
+.#{$prefix}-assessments-oneperpage {
+    padding:0;
+
+    .#{$prefix}-assessments-textabove, .#{$prefix}-assessments-textbelow {
+        padding-left:40px;
+        margin-top:20px;
+        margin-bottom:20px;
+        font-size:18px;
+    }
+}
